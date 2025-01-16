@@ -1,0 +1,10 @@
+{"ep_number": 103, "environment": "sim_to_real", "reward_for_ep": 750.0, "steps": 51, "collision_count": true, "goal_count": true}
+{"ep_number": 231, "environment": "sim_to_real", "reward_for_ep": 690.0, "steps": 63, "collision_count": true, "goal_count": true}
+{"ep_number": 243, "environment": "sim_to_real", "reward_for_ep": 980.0, "steps": 5, "collision_count": true, "goal_count": true}
+{"ep_number": 277, "environment": "sim_to_real", "reward_for_ep": -1075.0, "steps": 16, "collision_count": 1, "goal_count": false}
+{"ep_number": 367, "environment": "sim_to_real", "reward_for_ep": 785.0, "steps": 44, "collision_count": true, "goal_count": true}
+{"ep_number": 433, "environment": "sim_to_real", "reward_for_ep": -1155.0, "steps": 32, "collision_count": 1, "goal_count": false}
+{"ep_number": 515, "environment": "sim_to_real", "reward_for_ep": 805.0, "steps": 40, "collision_count": true, "goal_count": true}
+{"ep_number": 567, "environment": "sim_to_real", "reward_for_ep": 880.0, "steps": 25, "collision_count": true, "goal_count": true}
+{"ep_number": 637, "environment": "sim_to_real", "reward_for_ep": 835.0, "steps": 34, "collision_count": true, "goal_count": true}
+{"ep_number": 681, "environment": "sim_to_real", "reward_for_ep": 900.0, "steps": 21, "collision_count": true, "goal_count": true}
