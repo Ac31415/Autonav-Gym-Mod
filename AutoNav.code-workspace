@@ -24,6 +24,9 @@
 		},
 		{
 			"path": "../turtlebot3_machine_learning"
+		},
+		{
+			"path": "../../../../../media/wen-chung/ExtremePro/catkin_noetic_ws/src/Autonav-RL-Gym-Real-Alt"
 		}
 	]
 }

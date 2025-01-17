@@ -56,7 +56,8 @@ class Window(QMainWindow):
         self.past_action_Vs = []
         self.past_action_Omegas = []
         self.closest_obstacle_distances = []
-        self.closest_obstacle_headings = []
+        # self.closest_obstacle_headings = []
+        self.rewards = []
         self.x = []
         self.count = 1
         self.size_ep = 0
@@ -111,7 +112,7 @@ class Window(QMainWindow):
 
             else:
                 # self.ep, self.scan_ranges, self.headings, self.current_distances, self.robot_pos_xs, self.robot_pos_ys, self.goal_pos_xs, self.goal_pos_ys, self.episodes = self.load_data()
-                self.ep, self.scan_ranges, self.env_indices, self.headings, self.current_distances, self.robot_pos_xs, self.robot_pos_ys, self.goal_pos_xs, self.goal_pos_ys, self.past_action_Vs, self.past_action_Omegas, self.closest_obstacle_distances, self.closest_obstacle_headings = self.load_data()
+                self.ep, self.scan_ranges, self.env_indices, self.headings, self.current_distances, self.robot_pos_xs, self.robot_pos_ys, self.goal_pos_xs, self.goal_pos_ys, self.past_action_Vs, self.past_action_Omegas, self.closest_obstacle_distances, self.closest_obstacle_headings, self.rewards = self.load_data()
 
             self.size_ep = len(self.ep)
 
@@ -231,6 +232,7 @@ class Window(QMainWindow):
             self.past_action_Omegas.append(data.data[368])
             self.closest_obstacle_distances.append(data.data[369])
             self.closest_obstacle_headings.append(data.data[370])
+            self.rewards.append(data.data[371])
 
 
 
@@ -263,7 +265,7 @@ class Window(QMainWindow):
                         write.writerow(row)
 
 
-                    f.close()
+                    # f.close()
 
 
             else:
@@ -288,8 +290,8 @@ class Window(QMainWindow):
 
 
                 
-                    # Close the file object
-                    f.close()
+                    # # Close the file object
+                    # f.close()
 
 
             if (sys.argv[1] == "train"):
@@ -301,7 +303,7 @@ class Window(QMainWindow):
                     self.save_data([self.ep, self.scan_ranges, self.env_indices, self.headings, self.current_distances, self.robot_pos_xs, self.robot_pos_ys, self.goal_pos_xs, self.goal_pos_ys, self.past_action_Vs, self.past_action_Omegas, self.closest_obstacle_distances, self.closest_obstacle_headings])
 
             else:
-                self.save_data([self.ep, self.scan_ranges, self.env_indices, self.headings, self.current_distances, self.robot_pos_xs, self.robot_pos_ys, self.goal_pos_xs, self.goal_pos_ys, self.past_action_Vs, self.past_action_Omegas, self.closest_obstacle_distances, self.closest_obstacle_headings])
+                self.save_data([self.ep, self.scan_ranges, self.env_indices, self.headings, self.current_distances, self.robot_pos_xs, self.robot_pos_ys, self.goal_pos_xs, self.goal_pos_ys, self.past_action_Vs, self.past_action_Omegas, self.closest_obstacle_distances, self.closest_obstacle_headings, self.rewards])
 
 
             # # self.AvestepsGoalsPlt.plot(self.ep, self.AvestepsGoals, pen=(0, 255, 0))
@@ -352,6 +354,33 @@ class Window(QMainWindow):
                     row = []
                     row.append(fields[i])
                     row.append(self.closest_obstacle_headings[i])
+                    # # row.append(self.Days[i])
+                    # # row.append(self.Hours[i])
+                    # # row.append(self.Minutes[i])
+                    # # row.append(self.Seconds[i])
+                    # row.append(str(int(self.Days[i])) + " " + str(int(self.Hours[i])) + ":" + str(int(self.Minutes[i])) + ":" + str(int(self.Seconds[i])))
+                    write.writerow(row)
+
+
+
+            with open(self.CSVSavePath + "Rewards" +  ".csv", "w") as f:
+                # using csv.writer method from CSV package
+                write = csv.writer(f)
+
+                row = []
+                row.append("Steps")
+                row.append("Rewards")
+                # # row.append("Days")
+                # # row.append("Hours")
+                # # row.append("Minutes")
+                # # row.append("Seconds")
+                # row.append("Time Elapsed")
+                write.writerow(row)
+
+                for i in range(len(fields)):
+                    row = []
+                    row.append(fields[i])
+                    row.append(self.rewards[i])
                     # # row.append(self.Days[i])
                     # # row.append(self.Hours[i])
                     # # row.append(self.Minutes[i])
@@ -969,10 +998,10 @@ class Window(QMainWindow):
         else:
             try:
                 with open(self.CSVSavePath + "expert_data.txt", "rb") as f:
-                    x, y, z, a, b, c, d, e, F, g, h, i, j = pickle.load(f)
+                    x, y, z, a, b, c, d, e, F, g, h, i, j, k = pickle.load(f)
             except:
-                x, y, z, a, b, c, d, e, F, g, h, i, j = [], [], [], [], [], [], [], [], [], [], [], [], []
-            return x, y, z, a, b, c, d, e, F, g, h, i, j
+                x, y, z, a, b, c, d, e, F, g, h, i, j, k = [], [], [], [], [], [], [], [], [], [], [], [], [], []
+            return x, y, z, a, b, c, d, e, F, g, h, i, j, k
 
     def save_data(self, data):
         with open(self.CSVSavePath + "expert_data.txt", "wb") as f:

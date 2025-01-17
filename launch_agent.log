@@ -1,4 +1,0 @@
-INFO: cannot create a symlink to latest log directory: [Errno 17] File exists: '/Users/wen-chungcheng/.ros/log/00dc5752-d459-11ef-a617-26cf4d81f6f0' -> '/Users/wen-chungcheng/.ros/log/latest'
-2025-01-16 17:27:05.662 python[9148:94140592] +[IMKClient subclass]: chose IMKClient_Modern
-2025-01-16 17:27:05.662 python[9148:94140592] +[IMKInputSession subclass]: chose IMKInputSession_Modern
-/Users/wen-chungcheng/catkin_noetic_ws/src/Autonav-Gym-Mod/src/testing_logs/ppo/

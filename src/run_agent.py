@@ -88,11 +88,9 @@ if __name__ == '__main__':
             env_module_id = 'sim-to-real'
 
         if (sys.argv[1] == "train"):
-            # dirPath = '/home/wen-chung/catkin_noetic_ws/src/Autonav-RL-Gym-Real/src/saved_models/ppo/env-{}/'.format(env_module_id)
-            dirPath = 'saved_models/ppo/env-{}/'.format(env_module_id)
+            dirPath = '/home/wen-chung/catkin_noetic_ws/src/Autonav-RL-Gym-Real/src/saved_models/ppo/env-{}/'.format(env_module_id)
         else:
-            # dirPath = '/home/wen-chung/catkin_noetic_ws/src/Autonav-RL-Gym-Real/src/saved_models/ppo/'
-            dirPath = 'saved_models/ppo/'
+            dirPath = '/home/wen-chung/catkin_noetic_ws/src/Autonav-RL-Gym-Real/src/saved_models/ppo/'
 
 
         try:
@@ -294,7 +292,8 @@ if __name__ == '__main__':
 
             state, reward, collision, goal, scan_range, heading, current_distance, robot_pos, goal_pos, past_action, obstacle_min_range, obstacle_angle = agent.step(state,ep)
             env.logExpertData(scan_range, heading, current_distance, robot_pos, goal_pos, past_action, obstacle_min_range, obstacle_angle)
-            env.DispEpisodeCSVExpertData(scan_range, heading, current_distance, robot_pos, goal_pos, ep, past_action, obstacle_min_range, obstacle_angle)
+            # env.DispEpisodeCSVExpertData(scan_range, heading, current_distance, robot_pos, goal_pos, ep, past_action, obstacle_min_range, obstacle_angle)
+            env.DispEpisodeCSVExpertDataReward(scan_range, heading, current_distance, robot_pos, goal_pos, ep, past_action, obstacle_min_range, obstacle_angle, reward)
 
             # env.DispEpisodeCSV(running_reward, collision, goal, ep_steps, env.GoalRates, env.number_of_goals)
             # env.DispEpisodeCSVEachStep(reward, collision, goal, ep_steps, env.GoalRates, env.number_of_goals)
