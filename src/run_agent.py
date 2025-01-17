@@ -88,9 +88,11 @@ if __name__ == '__main__':
             env_module_id = 'sim-to-real'
 
         if (sys.argv[1] == "train"):
-            dirPath = '/home/wen-chung/catkin_noetic_ws/src/Autonav-RL-Gym-Real/src/saved_models/ppo/env-{}/'.format(env_module_id)
+            # dirPath = '/home/wen-chung/catkin_noetic_ws/src/Autonav-RL-Gym-Real/src/saved_models/ppo/env-{}/'.format(env_module_id)
+            dirPath = 'saved_models/ppo/env-{}/'.format(env_module_id)
         else:
-            dirPath = '/home/wen-chung/catkin_noetic_ws/src/Autonav-RL-Gym-Real/src/saved_models/ppo/'
+            # dirPath = '/home/wen-chung/catkin_noetic_ws/src/Autonav-RL-Gym-Real/src/saved_models/ppo/'
+            dirPath = 'saved_models/ppo/'
 
 
         try:

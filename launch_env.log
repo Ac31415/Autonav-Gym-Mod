@@ -1,0 +1,13 @@
+xacro: in-order processing became default in ROS Melodic. You can drop the option.
+libc++abi: terminating due to uncaught exception of type boost::wrapexcept<boost::lock_error>: boost: mutex lock failed in pthread_mutex_lock: Invalid argument [generic:22]
+[0m[ INFO] [1737067234.928108000]: Finished loading Gazebo ROS API Plugin.[0m
+[0m[ INFO] [1737067234.928851000]: waitForService: Service [/gazebo/set_physics_properties] has not been advertised, waiting...[0m
+/Users/wen-chungcheng/catkin_noetic_ws/src/gazebo_ros_pkgs/gazebo_ros/scripts/gzserver: line 41: 28050 Abort trap: 6           GAZEBO_MASTER_URI="$desired_master_uri" GAZEBO_MODEL_DATABASE_URI="$desired_model_database_uri" gzserver $final
+[31m[gazebo-2] process has died [pid 27912, exit code 134, cmd /Users/wen-chungcheng/catkin_noetic_ws/src/gazebo_ros_pkgs/gazebo_ros/scripts/gzserver -u -e ode /Users/wen-chungcheng/catkin_noetic_ws/src/Autonav-Gym-Mod/env_models/worlds/Home_Physical_Maze_World __name:=gazebo __log:=/Users/wen-chungcheng/.ros/log/e55826d0-d45a-11ef-adf6-26cf4d81f6f0/gazebo-2.log].
+log file: /Users/wen-chungcheng/.ros/log/e55826d0-d45a-11ef-adf6-26cf4d81f6f0/gazebo-2*.log[0m
+libc++abi: terminating due to uncaught exception of type boost::wrapexcept<boost::lock_error>: boost: mutex lock failed in pthread_mutex_lock: Invalid argument [generic:22]
+[0m[ INFO] [1737067234.888340000]: Finished loading Gazebo ROS API Plugin.[0m
+[0m[ INFO] [1737067234.889231000]: waitForService: Service [/gazebo_gui/set_physics_properties] has not been advertised, waiting...[0m
+/Users/wen-chungcheng/catkin_noetic_ws/src/gazebo_ros_pkgs/gazebo_ros/scripts/gzclient: line 42: 28036 Abort trap: 6           GAZEBO_MASTER_URI="$desired_master_uri" GAZEBO_MODEL_DATABASE_URI="$desired_model_database_uri" gzclient $final
+[31m[gazebo_gui-3] process has died [pid 27913, exit code 134, cmd /Users/wen-chungcheng/catkin_noetic_ws/src/gazebo_ros_pkgs/gazebo_ros/scripts/gzclient __name:=gazebo_gui __log:=/Users/wen-chungcheng/.ros/log/e55826d0-d45a-11ef-adf6-26cf4d81f6f0/gazebo_gui-3.log].
+log file: /Users/wen-chungcheng/.ros/log/e55826d0-d45a-11ef-adf6-26cf4d81f6f0/gazebo_gui-3*.log[0m
